@@ -5,10 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayuot from "./layout/MainLayuot";
 
 // pages
-import { Home, About, Contact, Shop } from "./pages";
+import { Home, About, Contact, Shop, Club } from "./pages";
 
 // actions
 import { loader as HomeLoader } from "./pages/Home";
+import { loader as ClubLoader } from "./pages/Club";
 
 function App() {
   const routes = createBrowserRouter([
@@ -30,8 +31,13 @@ function App() {
           element: <Contact />,
         },
         {
-          path: "/shop/:id",
+          path: "/shop",
           element: <Shop />,
+        },
+        {
+          path: "/club/:id",
+          element: <Club />,
+          loader: ClubLoader,
         },
       ],
     },
